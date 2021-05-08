@@ -5,6 +5,6 @@ else
 fi
 killall polybar
 bspc wm -r
-${HOME}/.config/scripts/retheme_dunst.sh
+${HOME}/.config/scripts/dunst/retheme_dunst.sh
 convert $1 -resize 256x256 -gravity center -crop 144x144+0+0 ${HOME}/.cache/rice_icon.png
 notify-send "New theme!" $1 --icon ${HOME}/.cache/rice_icon.png
