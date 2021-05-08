@@ -1,0 +1,71 @@
+# terminal emulator
+super + Return
+	kitty
+#cycle themes
+super + o
+	~/.config/scripts/cycle_theme.sh
+# program launcher
+super + space
+	rofi -modi drun -show drun -show-icons
+super + p
+	flameshot gui
+
+#Music bindings
+XF86AudioPlay
+	playerctl play-pause
+XF86AudioPrev
+	playerctl previous
+XF86AudioNext
+	playerctl next
+XF86AudioStop
+	playerctl stop
+XF86AudioLowerVolume
+	pactl set-sink-volume @DEFAULT_SINK@ -10%
+XF86AudioRaiseVolume
+	pactl set-sink-volume @DEFAULT_SINK@ +10%
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+#screenlock
+super + l
+	~/.config/scripts/lock.sh
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+#
+# bspwm hotkeys
+#
+
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# close and kill
+super + {_,shift + }w
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.local
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + ctrl + {s}
+	bspc node -g {sticky}
+
+# focus or send to the given desktop
+super + {_,shift +}{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
