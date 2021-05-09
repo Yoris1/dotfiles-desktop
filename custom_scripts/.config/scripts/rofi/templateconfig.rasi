@@ -1,0 +1,27 @@
+@import "~/.cache/wal/colors-rofi-dark"
+* {
+	background: %bg%7b;
+	text-color:  #ffeedd;
+	bg: #ffffff00;
+	background-color: @bg;
+	border-color: #ffffff00;
+}
+window {
+    height:   30%;
+    width: 30%;
+    border:  0px 2px 0px 0px;
+    text-color: @foreground;
+}
+mainbox {
+    expand: true;
+    spacing: 2%;
+}
+element selected  normal {
+    background-color: @urgent-background;
+}
+element alternate normal {
+    background-color: @bg;
+}
+element normal normal {
+	background-color: @bg;
+}
