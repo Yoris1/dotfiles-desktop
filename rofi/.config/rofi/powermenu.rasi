@@ -1,0 +1,8 @@
+@import "~/.config/rofi/global.rasi"
+window {
+    height:   100%;
+    width: 100%;
+    padding: 35%;
+    border:  0px 2px 0px 0px;
+    text-color: @foreground;
+}

@@ -6,7 +6,7 @@ super + o
 	~/.config/scripts/cycle_theme.sh
 # program launcher
 super + space
-	rofi -modi drun -show drun -show-icons
+	rofi -modi drun -show drun -show-icons -config ~/.config/rofi/launcher.rasi
 super + p
 	flameshot gui
 #kill picom in case it crashes
