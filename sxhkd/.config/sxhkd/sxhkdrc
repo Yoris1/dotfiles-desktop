@@ -9,7 +9,9 @@ super + space
 	rofi -modi drun -show drun -show-icons
 super + p
 	flameshot gui
-
+#kill picom in case it crashes
+super + k
+	killall picom
 #Music bindings
 XF86AudioPlay
 	playerctl play-pause
