@@ -8,3 +8,4 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 alias peewal='~/.config/scripts/theme.sh'
+export LESSHISTFILE=-
