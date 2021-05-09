@@ -2,7 +2,6 @@
 . "${HOME}/.cache/wal/colors.sh"
 ${HOME}/.config/scripts/keyb_languages.sh
 pgrep -x sxhkd > /dev/null || sxhkd &
-pgrep -x picom > /dev/null || $HOME/.config/scripts/start_picom.sh &
 pgrep -x dunst > /dev/null || dunst &
 bspc monitor -d I II III IV V VI VII VIII IX X
 
@@ -24,3 +23,4 @@ pgrep -x polybar > /dev/null || $HOME/.config/scripts/start_polybar.sh &
 pgrep -x redshift > /dev/null || redshift -l 54.68916:25.2798 &
 (sleep 1 && xmodmap ${HOME}/.Xmodmap) &
 # without waiting xmodmap won't load properly
+pgrep -x picom > /dev/null || $HOME/.config/scripts/start_picom.sh &

@@ -1,1 +1,1 @@
-picom -b
+picom --experimental-backends -b
