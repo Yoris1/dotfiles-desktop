@@ -24,3 +24,5 @@ pgrep -x redshift > /dev/null || redshift -l 54.68916:25.2798 &
 (sleep 1 && xmodmap ${HOME}/.Xmodmap) &
 # without waiting xmodmap won't load properly
 pgrep -x picom > /dev/null || $HOME/.config/scripts/start_picom.sh &
+pgrep -x xss-lock > /dev/null || xss-lock -n /usr/lib/xsecurelock/dimmer -l -- ~/.config/scripts/lock.sh
+xset s 180 120

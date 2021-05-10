@@ -36,7 +36,7 @@ XF86AudioMute
 
 #screenlock
 super + l
-	~/.config/scripts/lock.sh
+	xset s activate
 
 # make sxhkd reload its configuration files:
 super + Escape
