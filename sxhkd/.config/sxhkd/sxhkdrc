@@ -4,6 +4,9 @@ super + Return
 #cycle themes
 super + o
 	~/.config/scripts/cycle_theme.sh
+#file manager
+alt + f
+	kitty ranger
 #passwords
 super + semicolon
 	~/.config/scripts/passmenu_rofi.sh
