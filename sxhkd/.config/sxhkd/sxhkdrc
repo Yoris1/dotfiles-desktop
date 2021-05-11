@@ -6,10 +6,12 @@ super + o
 	~/.config/scripts/cycle_theme.sh
 #file manager
 alt + f
-	kitty ranger
+	kitty bash -ic ranger
 #passwords
 super + semicolon
-	~/.config/scripts/passmenu_rofi.sh
+	~/.config/scripts/passmenu_rofi.sh personal
+super + shift + semicolon
+	~/.config/scripts/passmenu_rofi.sh work
 # program launcher
 super + space
 	rofi -modi drun -show drun -show-icons -config ~/.config/rofi/launcher.rasi

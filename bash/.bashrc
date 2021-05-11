@@ -7,5 +7,16 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
-alias peewal='~/.config/scripts/theme.sh'
+
 export LESSHISTFILE=-
+export PASSWORD_STORE_DIR=~/.passwords/personal
+function peewal() {
+	~/.config/scripts/theme.sh $@
+}
+function fehwal() {
+	feh -Zxd --action2 "; peewal '%f'" --scale-down $@ > /dev/null 2> /dev/null
+}
+
+export -f peewal
+export -f fehwal
+
