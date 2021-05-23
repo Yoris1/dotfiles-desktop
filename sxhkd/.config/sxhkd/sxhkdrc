@@ -22,13 +22,13 @@ super + k
 	killall picom
 #Music bindings
 XF86AudioPlay
-	playerctl play-pause
+	playerctl -i discord play-pause
 XF86AudioPrev
-	playerctl previous
+	playerctl -i discord previous
 XF86AudioNext
-	playerctl next
+	playerctl -i discord next
 XF86AudioStop
-	playerctl stop
+	playerctl -i discord stop
 XF86AudioLowerVolume
 	pactl set-sink-volume @DEFAULT_SINK@ -10%
 XF86AudioRaiseVolume
@@ -79,3 +79,7 @@ super + ctrl + {s}
 # focus or send to the given desktop
 super + {_,shift +}{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+super + y
+	bspc node -n newest.\!automatic.local
