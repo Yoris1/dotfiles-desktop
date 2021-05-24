@@ -1,3 +1,4 @@
 
 [Default Applications]
 inode/directory=ranger.desktop
+application/*.document=LibreOffice.desktop
