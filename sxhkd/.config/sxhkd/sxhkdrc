@@ -18,7 +18,7 @@ super + space
 super + p
 	flameshot gui
 #kill picom in case it crashes
-super + k
+alt + k
 	killall picom
 #Music bindings
 XF86AudioPlay
@@ -37,7 +37,7 @@ XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #screenlock
-super + l
+alt + l
 	xset s activate
 
 # make sxhkd reload its configuration files:
@@ -77,9 +77,11 @@ super + ctrl + {s}
 	bspc node -g {sticky}
 
 # focus or send to the given desktop
-super + {_,shift +}{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
-super + ctrl + {Left,Down,Up,Right}
+super + {_,shift +}{1-5,r,6,7-9,0}
+	bspc {desktop -f,node -d} '^{1-5,6,6,7-9,10}'
+super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 super + y
 	bspc node -n newest.\!automatic.local
+super + {_,shift + }{h,j,k,l}
+        bspc node -{f,s} {west,south,north,east}
