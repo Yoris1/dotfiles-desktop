@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ranger
+Type=Application
+Version=1.0
+Comment=File manager
+Path=/usr/bin
+Exec=kitty bash -ic ranger /home/yoris
+Terminal=false
