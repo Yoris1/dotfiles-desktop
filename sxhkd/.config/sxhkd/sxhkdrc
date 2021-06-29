@@ -2,6 +2,10 @@
 super + Return
 	kitty
 #cycle themes
+ctrl + @3
+	xdotool key F3
+ctrl + @4
+	xdotool keydown F3 && xdotool keydown g && xdotool keyup F3 && xdotool keyup g
 super + o
 	~/.config/scripts/cycle_theme.sh
 #file manager
