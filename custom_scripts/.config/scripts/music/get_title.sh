@@ -1,5 +1,5 @@
 #!/bin/bash
-status=`playerctl status 2> /dev/null`
+status=`playerctl -i discord status 2> /dev/null`
 icon=''
 if [ $? -eq 0 ]
 then
@@ -10,7 +10,7 @@ then
 		then
 			icon=''
 		fi
-		echo $icon `playerctl metadata title`  by `playerctl metadata artist`
+		echo $icon `playerctl -i discord metadata title`  by `playerctl -i discord metadata artist`
 		exit 0
 	fi
 fi
