@@ -20,3 +20,4 @@ function fehwal() {
 export -f peewal
 export -f fehwal
 
+export _JAVA_AWT_WM_NONREPARENTING=1
