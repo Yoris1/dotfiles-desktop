@@ -20,7 +20,10 @@ super + shift + semicolon
 super + space
 	rofi -modi drun -show drun -show-icons -config ~/.config/rofi/launcher.rasi
 super + p
-	flameshot gui
+	~/.config/scripts/screenshot.sh
+super + shift + p
+	~/.config/scripts/screenshot.sh true
+
 #kill picom in case it crashes
 alt + k
 	killall picom
