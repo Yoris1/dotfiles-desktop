@@ -29,3 +29,6 @@ Stow currently has a bug with the --dotfiles option and directories. Until it's 
 - [ ] make sure README is clear
 - [ ] make sure `./packages` has all of the necessary packages and nothing more
 - [ ] mention stow bug workaround
+
+### before going public
+- [ ] make sure there is no personal information in the git backlog
