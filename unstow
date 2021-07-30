@@ -1,4 +1,4 @@
 #!/bin/bash
 shopt -s extglob
 stow --dotfiles !(unstow|README.md|screenshots|packages)
-echo "Enjoy the rice!"
+echo "Enjoy the dotfiles!"

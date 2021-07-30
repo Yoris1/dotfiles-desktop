@@ -32,6 +32,3 @@ Alternatively, you can make a script that replaces all the instances of `dot-` i
 - [x] make sure README is clear
 - [ ] make sure `./packages` has all of the necessary packages and nothing more
 - [x] mention stow bug workaround
-
-### Before going public
-- [ ] make sure there is no personal information in the git backlog
