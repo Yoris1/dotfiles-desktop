@@ -1,7 +1,7 @@
 # Yoris' personal desktop dotfiles
 ## Main Features
 * 🎨 Custom script (`fehwal`) for dynamic theming of most programs (Thanks to [pywal](https://github.com/dylanaraps/pywal) and [pywalfox](https://addons.mozilla.org/en-US/firefox/addon/pywalfox/) )
-* 💾 Built in local password manager ( [pass](https://www.passwordstore.org/) with the [`passmenu`]([https://link](https://git.zx2c4.com/password-store/tree/contrib/dmenu)) script modified to work with rofi ) 
+* 💾 Built in local password manager ( [pass](https://www.passwordstore.org/) with the [passmenu]([https://link](https://git.zx2c4.com/password-store/tree/contrib/dmenu)) script modified to work with rofi ) 
 * 🎹 Built in music controls and info for most music players in bar ( using [playerctl](https://github.com/altdesktop/playerctl) )
 * 💻 [bspwm](https://github.com/baskerville/bspwm) with vim keybinds
 * 🖱️ [ranger](https://ranger.github.io/) as default file manager when opening files + [dragon](https://github.com/mwh/dragon) for gui app functionality
