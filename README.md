@@ -16,14 +16,14 @@
 \
 Clone git repo into your home directory, then install the dotfiles with `./unstow`\
 \
-Most of the required packages are listed in `./packages`,
+Most of the required packages (and a bunch more that I use and am not sure if they're required) are listed in `./packages`,
 however some of them come from the [AUR](https://aur.archlinux.org/).
 Refer to the [ Arch Wiki page ](https://wiki.archlinux.org/title/Arch_User_Repository) on how to install from there. 
   
 
 ## Additional info
 
-Special thanks to [GNU Stow](https://www.gnu.org/software/stow/) for making it easy to package the dotfiles!\
+❤ Special thanks to [GNU Stow](https://www.gnu.org/software/stow/) for making it easy to package the dotfiles!\
 \
 [GNU Stow](https://www.gnu.org/software/stow/) currently has a bug with the --dotfiles option for directories (e.g. `dot-config`). Until [my changes](https://github.com/aspiers/stow/pull/90) are merged upstream, you can get my fixed fork [here.](https://github.com/Yoris1/stow)\
 Alternatively, you can make a script that replaces all the instances of `dot-` in filenames with `.` and omit the `--dotfiles` option in the `./unstow` script
