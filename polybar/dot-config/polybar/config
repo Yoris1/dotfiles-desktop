@@ -11,6 +11,7 @@ alert = ${xrdb:color3}
 width = 22%
 height = 35
 offset-x = 0.5%
+offset-y = 0.4%
 radius = 8.0
 
 background = ${colors.background}
@@ -33,6 +34,7 @@ cursor-click = pointer
 [bar/title]
 width = 30%
 height = 35
+offset-y = 0.4%
 offset-x = 33%
 radius = 8.0
 
@@ -56,6 +58,7 @@ cursor-scroll = ns-resize
 [bar/tray]
 width = 22%
 height = 35
+offset-y = 0.4%
 offset-x = 77.5%
 radius = 8.0
 
