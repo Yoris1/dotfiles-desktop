@@ -11,9 +11,6 @@ super + o
 #file manager
 alt + f
 	kitty bash -ic ranger
-#emoji picker
-super+e
-	emoji-picker
 #passwords
 super + semicolon
 	~/.config/scripts/passmenu_rofi.sh personal
