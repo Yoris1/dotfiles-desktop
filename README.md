@@ -33,3 +33,4 @@ Alternatively, you can make a script that replaces all the instances of `dot-` i
 - [ ] make sure `./packages` has all of the necessary packages and nothing more
 - [x] mention stow bug workaround
 - [ ] add popup floating terminal hotkey
+- [ ] add mpd support through `mpc`, cause playerctl and streaming music is annoying 
