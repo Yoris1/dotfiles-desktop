@@ -44,7 +44,7 @@ XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #screenlock
-alt + l
+alt + @l
 	xset s activate
 
 # make sxhkd reload its configuration files:

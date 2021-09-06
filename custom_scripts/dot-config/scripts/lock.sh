@@ -1,3 +1,4 @@
+#!/bin/bash
 killall picom
 killall -SIGUSR1 dunst
 xsecurelock
