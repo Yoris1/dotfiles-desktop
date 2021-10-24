@@ -27,6 +27,8 @@ export -f peewal
 export -f fehwal
 
 export _JAVA_AWT_WM_NONREPARENTING=1
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+
 
 GPG_TTY=$(tty)
 export GPG_TTY
