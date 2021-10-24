@@ -1,3 +1,9 @@
+super + {o,i}
+        bspc wm -h off; \
+        bspc node {older,newer} -f; \
+        bspc wm -h on
+super + period
+	~/.config/scripts/dropdown_terminal.sh
 # terminal emulator
 super + Return
 	kitty
