@@ -3,8 +3,10 @@
 ${HOME}/.config/scripts/keyb_languages.sh
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x dunst > /dev/null || dunst &
-bspc monitor -d I II III IV V VI VII VIII IX X
-
+xrandr --output DP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 3840x0 --rotate normal --output DVI-D-1 --off --output DVI-D-2 --mode 1920x1080 --pos 1920x0 --rotate normal
+bspc monitor HDMI-1 -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor DVI-D-2 -d B1 B2 B3 B4 B5 B6 B7 B8 B9 B10
+bspc config pointer_follows_monitor true
 bspc config focus_follows_pointer true
 bspc config border_width        10
 bspc config window_gap          8
