@@ -25,7 +25,7 @@ function sendCommandToPlayer() {
 	backend="mpc"
 	command="$2"
 	if [[ $1 != "mpd" ]]; then
-		backend="playerctl" 
+		backend="playerctl -p $1" 
 		case $command in
 			toggle)
 				command="play-pause"
