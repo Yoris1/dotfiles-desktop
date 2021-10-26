@@ -13,7 +13,6 @@ function getPlayer() {
 		echo mpd
 	fi
 }
-
 function sendCommandToPlayer() {
 	# $1 is player name, $2 is play/pause/toggle/stop/next/prev
 	backend="mpc"
@@ -31,16 +30,19 @@ function sendCommandToPlayer() {
 	fi
 	$backend $command # send $command to player with the $backend backend
 }
+function getPlayerStatus() {
+	# $1 is a playerctl player id or mpd
+	pass
+}
 
 if [[ $# -eq 1 ]]; then
 	getPlayer $1 # $1 is "Playing" or "Paused"
-
 elif [[ $# -eq 2 ]]; then
 	# $1 is player name; $2 is play/pause/toggle/stop/next/prev/status
+	# TODO: add a title command
 	if [[ $2 != status ]]; then
 		sendCommandToPlayer $1 $2
 	else 
-		#get status of player here 
-		echo status idfk
+		echo `getPlayerStatus $1`
 	fi
 fi
