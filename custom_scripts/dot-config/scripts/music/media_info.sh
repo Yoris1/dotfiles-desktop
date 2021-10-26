@@ -8,10 +8,39 @@ function getPlayer() {
 			break
 		fi
 	done
-	mpd_status=`mpc`
+	mpd_status=`mpc --format ""` # --format "" removes song name in case it has "paused" or "playing" in it 
 	if [[ $mpd_status == *"${1,,}"* ]]; then 
-		echo mpd.`pidof mpd`
+		echo mpd
 	fi
 }
 
-getPlayer "Paused" # or getPlayer "Playing"
+function sendCommandToPlayer() {
+	# $1 is player name, $2 is play/pause/toggle/stop/next/prev
+	backend="mpc"
+	command="$2"
+	if [[ $1 != "mpd" ]]; then
+		backend="playerctl" 
+		case $command in
+			toggle)
+				command="play-pause"
+			;;
+			prev)
+				command="previous"
+			;;
+		esac
+	fi
+	$backend $command # send $command to player with the $backend backend
+}
+
+if [[ $# -eq 1 ]]; then
+	getPlayer $1 # $1 is "Playing" or "Paused"
+
+elif [[ $# -eq 2 ]]; then
+	# $1 is player name; $2 is play/pause/toggle/stop/next/prev/status
+	if [[ $2 != status ]]; then
+		sendCommandToPlayer $1 $2
+	else 
+		#get status of player here 
+		echo status idfk
+	fi
+fi
