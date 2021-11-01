@@ -16,11 +16,19 @@ function peewal() {
 function fehwal() {
 	feh -Zxd --action2 "; peewal '%f'" --scale-down $@ > /dev/null 2> /dev/null
 }
-
+function ytmdl() {
+	youtube-dl -f 140 $@
+}
+function ffmpegif() {
+	ffmpeg -i $1 -vf palettegen /tmp/ffmpeg_palette.png
+	ffmpeg -i $1 -i /tmp/ffmpeg_palette.png -lavfi paletteuse $2
+}
 export -f peewal
 export -f fehwal
 
 export _JAVA_AWT_WM_NONREPARENTING=1
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+
 
 GPG_TTY=$(tty)
 export GPG_TTY

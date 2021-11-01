@@ -1,112 +1,111 @@
 [colors]
 ;background = ${xrdb:color1}
-background = ${env:bg}
-foreground = ${xrdb:color7}
-foreground-alt = ${xrdb:color8}
+background = "232a32"
+background-alt = "532a32"
+foreground = ${xrdb:color15}
+foreground-alt = ${xrdb:color9}
 primary = ${xrdb:color3}
 secondary = ${xrdb:color2}
 alert = ${xrdb:color3}
 
-[bar/workspaces]
-width = 22%
-height = 35
-offset-x = 0.5%
-offset-y = 0.4%
-radius = 8.0
+
+[bar/workspaces-secondary]
+monitor = DVI-D-2
+width = 100%
+height = 27
+offset-x = 0
+offset-y = 0
+radius = 0 
+border-size = 0
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-
 line-size = 3
-
-border-size = 5
-border-color = #00000000
-
-font-0 = Iosevka Medium:size=11;1
+font-0 = Iosevka Medium:size=14;1
 font-1 = Font Awesome 5 Brands Regular:size=10
 font-2 = Font Awesome 5 Free Regular:size=10
 font-3 = Font Awesome 5 Free Solid:size=10
-
+font-4 = Noto Sans CJK JP:style=Regular:size=11;1
 modules-center = bspwm
 wm-restack = bspwm
 cursor-click = pointer
 
-[bar/title]
-width = 30%
-height = 35
-offset-y = 0.4%
-offset-x = 33%
-radius = 8.0
+[bar/main]
+width = 100%
+height = 27
+offset-y = 0
+offset-x = 0
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-size = 5
+border-size = 0
 border-color = #00000000
 
 font-0 = Iosevka Medium:size=11;1
-font-1 = Font Awesome 5 Brands Regular:size=10
-font-2 = Font Awesome 5 Free Regular:size=10
-font-3 = Font Awesome 5 Free Solid:size=10
-
-modules-center = music
+font-1 = Symbols Nerd Font:size=10;1
+font-2 = Font Awesome 5 Brands Regular:size=10
+font-3 = Font Awesome 5 Free Regular:size=10
+font-4 = Font Awesome 5 Free Solid:size=10
+font-5 = Noto Sans CJK JP:size=11:weight=bold;2
+modules-left = bspwm
+modules-center = xwindow
+modules-right = music xkeyboard pulseaudio date
+module-margin-right = 0
+module-margin-left = 0
+tray-position = right
 wm-restack = bspwm
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[bar/tray]
-width = 22%
-height = 35
-offset-y = 0.4%
-offset-x = 77.5%
-radius = 8.0
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-border-size = 5
-border-color = #00000000
-
-font-0 = Iosevka Medium:size=11;1
-font-1 = Font Awesome 5 Brands Regular:size=10
-font-2 = Font Awesome 5 Free Regular:size=10
-font-3 = Font Awesome 5 Free Solid:size=10
-module-margin-right = 2
-padding-right = 2
-modules-right = xkeyboard pulseaudio powermenu date
-
-wm-restack = bspwm
-
-cursor-click = pointer
-cursor-scroll = ns-resize
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-
-format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-label-layout =  %layout%
+label-layout = %layout:0:2:%
 
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
+label-focused = %icon%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.foreground}
-label-focused-padding = 2
+label-focused-padding = 1
 
-label-occupied = %index%
-label-occupied-padding = 2
+label-occupied = %icon%
+label-occupied-padding = 1
 
-label-urgent = %index%!
+label-urgent = %icon%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
-label-empty = %index%
+label-empty = %icon%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 1
+
+ws-icon-default = "A"
+ws-icon-0 = 1;一
+ws-icon-1 = 2;二
+ws-icon-2 = 3;三
+ws-icon-3 = 4;四
+ws-icon-4 = 5;五
+ws-icon-5 = 6;六
+ws-icon-6 = 7;七
+ws-icon-7 = 8;八
+ws-icon-8 = 9;九
+ws-icon-9 = 10;十
+
+ws-icon-10 = B1;一
+ws-icon-11 = B2;二
+ws-icon-12 = B3;三
+ws-icon-13 = B4;四
+ws-icon-14 = B5;五
+ws-icon-15 = B6;六
+ws-icon-16 = B7;七
+ws-icon-17 = B8;八
+ws-icon-18 = B9;九
+ws-icon-19 = B10;十
 
 [module/music]
 type = custom/script
@@ -114,19 +113,20 @@ exec = $HOME/.config/scripts/music/get_music.sh 2> /dev/null
 tail = true
 click-left = playerctl play-pause
 interval = 0
+
 [module/powermenu]
 type = custom/text
 content = 
 click-left = ~/.config/scripts/power.sh
+
 [module/date]
 type = internal/date
 interval = 5
-date-alt = " %Y-%m-%d"
-time =  %H:%M
-time-alt = %H:%M:%S
+date-alt = " %Y-%m-%d"
+time =愈 %H:%M
+time-alt =愈 %H:%M:%S
 format-prefix-foreground = ${colors.foreground-alt}
-
-label = %date% %time%
+label =%date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -134,6 +134,10 @@ format-volume = <label-volume>
 label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 label-muted = 🔇 
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:35:...%
 
 [settings]
 screenchange-reload = true

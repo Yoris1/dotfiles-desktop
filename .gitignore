@@ -3,3 +3,7 @@ mpd/dot-config/mpd/database
 mpd/dot-config/mpd/pid
 mpd/dot-config/mpd/sticker.sql
 mpd/dot-config/mpd/state
+*.png
+*.jpg
+*.jpeg
+*.mp4
