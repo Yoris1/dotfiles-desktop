@@ -126,7 +126,6 @@ date-alt = " %Y-%m-%d"
 time =愈 %H:%M
 time-alt =愈 %H:%M:%S
 format-prefix-foreground = ${colors.foreground-alt}
-
 label =%date% %time%
 
 [module/pulseaudio]
@@ -138,7 +137,7 @@ label-muted = 🔇 
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:35:...%
 
 [settings]
 screenchange-reload = true

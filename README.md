@@ -3,13 +3,12 @@
 * 🎨 Custom script (`fehwal`) for dynamic theming of most programs (Thanks to [pywal](https://github.com/dylanaraps/pywal) and [pywalfox](https://addons.mozilla.org/en-US/firefox/addon/pywalfox/) )
 * 💾 Built in local password manager ( [pass](https://www.passwordstore.org/) with the [passmenu]([https://link](https://git.zx2c4.com/password-store/tree/contrib/dmenu)) script modified to work with rofi ) 
 * 🎹 Built in music controls and info for most music players in bar ( using [playerctl](https://github.com/altdesktop/playerctl) )
-* 💻 my own WIP [bspwm](https://github.com/Yoris1/bspwm) fork for individually adjustable border widths 
+* 💻 BSPWM
 * 🖱️ [ranger](https://ranger.github.io/) as default file manager when opening files + [dragon](https://github.com/mwh/dragon) for gui app functionality
 * 🔒 Secure screenlocking with [xsecurelock](https://github.com/google/xsecurelock)
 * 📷 Custom screenshot script using [scrot](https://github.com/resurrecting-open-source-projects/scrot) and [gimp](https://www.gnu.org/software/gimp/)
 ## Screenshots
-![screenshot 1](screenshots/2021-08-27-151921_1920x1080_scrot.png)
-![screenshot 2](screenshots/unix2.png)
+![screenshot 1](screenshots/2021-11-01-205924_1920x1080_scrot.png)
 
 ## Installation
 **These are my personal dotfiles. It's a highly altered configuration, and they probably will not work for other people, so I don't see a reason to install them for yourself, if you want to take some scripts from here, feel free.**\
