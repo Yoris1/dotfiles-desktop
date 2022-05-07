@@ -1,54 +1,21 @@
 #!/bin/bash
-function getPlayer() {
-	players=`playerctl -l`
-	for i in $players; do
-		status=`playerctl -p $i status 2> /dev/null` 
-		if [[ $status = $1 ]] # $1 can either be "Playing" or "Paused" 
-		then
-			echo $i 
-			break
-		fi
-	done
-}
+script_dir=`dirname "$(readlink -f "$0")"`
+media_info_script="$script_dir/media_info.sh" 
 
-mpc_status=`mpc`
-
-main_player=`getPlayer "Playing"` # check if anything is palying on browsers
-if [[ -z $main_player && $mpc_status == *"playing"* ]] ; then 
-	# if nothing's playing on browsers, check if anything is playing on mpc
-	echo -e playing some garbage on mpd!
+main_player=`$media_info_script "Playing"`
+if [[ -z $main_player ]] ; then # if nothing's playing check if anything is paused
+	main_player=`$media_info_script "Paused"` 
+fi
+if [[ -z $main_player ]]; then # if nothing's playing at all:
+	echo Not Playing anything!
 	exit 0
 fi
-if [[ -z $main_player ]]; then
-	# if nothing's playing on mpc, check if there are any paused browser videos
-	main_player=`getPlayer Paused`
-fi
-if [[ -z $main_player && $mpc_status == *"paused"* ]]; then
-	# if there are no paused browser videos, check if there's anything paused on mpd
-	main_player="something paused on mpd!"
-	exit 0
-fi
-if [[ -z $main_player ]]; then 
-	main_player=`echo nothing playing!`
-fi 
-echo $main_player
-exit 0
 
-
-
-status=`playerctl -i discord status 2> /dev/null`
-icon=''
-if [ $? -eq 0 ]
+status=`$media_info_script "$main_player" status`
+icon=''
+if [[ $status = "Playing" ]] 
 then
-	if [[ $status = "Playing" ]] || [[ $status = "Paused" ]]
-	then
-		icon=''
-		if [[ $status = "Playing" ]] 
-		then
-			icon=''
-		fi
-		echo $icon `playerctl -i discord metadata title`  by `playerctl -i discord metadata artist`
-		exit 0
-	fi
+	icon=''
 fi
-exit 1
+echo $icon `$media_info_script $main_player title`
+exit 0
