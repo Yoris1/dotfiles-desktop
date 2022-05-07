@@ -33,5 +33,6 @@ export XDG_STATE_HOME="$HOME"/.local/state
 GPG_TTY=$(tty)
 export GPG_TTY
 shopt -s extglob
+alias nano='nvim'
 export PATH="$HOME/.local/bin:$PATH"
 export HISTFILE="$XDG_STATE_HOME"/bash/history
