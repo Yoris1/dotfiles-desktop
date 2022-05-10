@@ -33,3 +33,4 @@ Alternatively, you can make a script that replaces all the instances of `dot-` i
 - [x] mention stow bug workaround
 - [x] add popup floating terminal hotkey
 - [ ] add mpd support through `mpc`, cause playerctl and streaming music is annoying 
+- [ ] automatically spawn bars and workspaces for any monitor despite monitor info 
