@@ -1,5 +1,5 @@
 #!/bin/bash
-MONITORS="$( xrandr -q | grep -w connected | awk '{print $1}' )"
+source ~/.bin/set_monitors.sh
 for MONITOR in $MONITORS
 do
 	export MONITOR
