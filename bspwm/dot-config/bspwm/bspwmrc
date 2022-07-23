@@ -1,6 +1,9 @@
 #! /bin/sh
-. "${HOME}/.cache/wal/colors.sh"
-${HOME}/.config/scripts/keyb_languages.sh
+source "${HOME}/.cache/wal/colors.sh"
+for script in ~/.startup/on_load/* ; do
+	echo "executing onload script ${script}"
+	$script
+done
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x dunst > /dev/null || dunst &
 xrandr --output DP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 3840x0 --rotate normal --output DVI-D-2 --off --output DVI-D-1 --mode 1920x1080 --pos 1920x0 --rotate normal
@@ -25,12 +28,7 @@ bspc rule -a Steam desktop='^6' state=floating follow=off
 bspc rule -a "*:*:Picture-in-Picture" state=floating follow=off sticky=on rectangle=320x180+1600+880
 bspc rule -a "*:*:scratch" state=floating follow=off sticky=on rectangle=420x280+1500+780
 wal -R
-pgrep -x polybar > /dev/null || $HOME/.config/scripts/start_polybar.sh &
 pgrep -x redshift > /dev/null || redshift -l 54.68916:25.2798 &
-(sleep 1 && xmodmap ${HOME}/.Xmodmap) &
-# without waiting xmodmap won't load properly
 pgrep -x picom > /dev/null || $HOME/.config/scripts/start_picom.sh &
 pgrep -x xss-lock > /dev/null || xss-lock -n /usr/lib/xsecurelock/dimmer -l -- ~/.config/scripts/lock.sh
 xset s 180 120
-killall oneko
-oneko -tofocus -fg "$color1" -bg "$color2"
