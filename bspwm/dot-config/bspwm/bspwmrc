@@ -27,7 +27,7 @@ bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Steam desktop='^6' state=floating follow=off
 bspc rule -a "*:*:Picture-in-Picture" state=floating follow=off sticky=on rectangle=320x180+1600+880
 bspc rule -a "*:*:scratch" state=floating follow=off sticky=on rectangle=420x280+1500+780
-wal -R
+
 pgrep -x redshift > /dev/null || redshift -l 54.68916:25.2798 &
 pgrep -x picom > /dev/null || $HOME/.config/scripts/start_picom.sh &
 pgrep -x xss-lock > /dev/null || xss-lock -n /usr/lib/xsecurelock/dimmer -l -- ~/.config/scripts/lock.sh
