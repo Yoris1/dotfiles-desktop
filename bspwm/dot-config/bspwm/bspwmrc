@@ -28,6 +28,5 @@ bspc rule -a "*:*:Picture-in-Picture" state=floating follow=off sticky=on rectan
 bspc rule -a "*:*:scratch" state=floating follow=off sticky=on rectangle=420x280+1500+780
 
 pgrep -x redshift > /dev/null || redshift -l 54.68916:25.2798 &
-pgrep -x picom > /dev/null || $HOME/.config/scripts/start_picom.sh &
 pgrep -x xss-lock > /dev/null || xss-lock -n /usr/lib/xsecurelock/dimmer -l -- ~/.config/scripts/lock.sh
 xset s 180 120

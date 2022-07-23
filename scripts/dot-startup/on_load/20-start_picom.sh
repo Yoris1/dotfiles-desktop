@@ -1,1 +1,2 @@
-picom --experimental-backends -b
+#!/bin/bash
+pgrep -x picom > /dev/null || picom --experimental-backends -b
