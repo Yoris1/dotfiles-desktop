@@ -1,39 +1,35 @@
-super + {o,i}
-        bspc wm -h off; \
-        bspc node {older,newer} -f; \
-        bspc wm -h on
-super + period
-	~/.config/scripts/dropdown_terminal.sh
 # terminal emulator
 super + Return
 	kitty
-#cycle themes
-#ctrl + @3
-#	xdotool key F3
-#ctrl + @4
-#	xdotool keydown F3 && xdotool keydown g && xdotool keyup F3 && xdotool keyup g
-#super + o
-#	~/.config/scripts/cycle_theme.sh
+# program launcher
+super + space
+	rofi -modi drun -show drun -show-icons -config ~/.config/rofi/launcher.rasi
 #file manager
 alt + f
 	kitty bash -ic ranger
+# dropdown terminal
+super + period
+	~/.config/scripts/dropdown_terminal.sh
 #passwords
 super + semicolon
 	~/.config/scripts/passmenu_rofi.sh personal
 super + shift + semicolon
 	~/.config/scripts/passmenu_rofi.sh work
-# program launcher
-super + space
-	rofi -modi drun -show drun -show-icons -config ~/.config/rofi/launcher.rasi
 # screenshots
 super + p
 	~/.bin/screenshot.sh
 super + shift + p
 	~/.bin/screenshot.sh true
-
-#kill picom in case it crashes
+#kill picom
 alt + k
 	killall picom
+#screenlock
+alt + @l
+	xset s activate
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
 #Music bindings
 XF86AudioPlay
 	playerctl -i discord play-pause
@@ -50,33 +46,31 @@ XF86AudioRaiseVolume
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-#screenlock
-alt + @l
-	xset s activate
-
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
-
 #
 # bspwm hotkeys
 #
 
+# focus or send to the given desktop
+super + {_,shift +}{1-5,r,6,7-9,0}
+	bspc {desktop -f,node -d} "{1-5,6,6,7-9,10}"
+ctrl + {_,shift +}{1-5,6,7-9,0}
+	bspc {desktop -f,node -d} "B{1-5,6,7-9,10}"
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
-
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
-
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
-
 # swap the current node and the biggest window
 super + g
 	bspc node -s biggest.local
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
 
 #
 # state/flags
@@ -85,20 +79,12 @@ super + g
 # set the window state
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
 # set the node flags
 super + ctrl + {s}
 	bspc node -g {sticky}
-
-# focus or send to the given desktop
-super + {_,shift +}{1-5,r,6,7-9,0}
-	bspc {desktop -f,node -d} "{1-5,6,6,7-9,10}"
-ctrl + {_,shift +}{1-5,6,7-9,0}
-	bspc {desktop -f,node -d} "B{1-5,6,7-9,10}"
-
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 super + y
 	bspc node -n newest.\!automatic.local
 super + {_,shift + }{h,j,k,l}
-        bspc node -{f,s} {west,south,north,east}
+		bspc node -{f,s} {west,south,north,east}
