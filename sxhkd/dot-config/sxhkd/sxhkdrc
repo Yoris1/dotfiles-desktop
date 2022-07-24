@@ -25,10 +25,11 @@ super + shift + semicolon
 # program launcher
 super + space
 	rofi -modi drun -show drun -show-icons -config ~/.config/rofi/launcher.rasi
+# screenshots
 super + p
-	~/.config/scripts/screenshot.sh
+	~/.bin/screenshot.sh
 super + shift + p
-	~/.config/scripts/screenshot.sh true
+	~/.bin/screenshot.sh true
 
 #kill picom in case it crashes
 alt + k
